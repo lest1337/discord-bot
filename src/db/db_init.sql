@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS ticket (
+
+    ticket_id INTEGER PRIMARY KEY NOT NULL,
+    user_id INTEGER NOT NULL,
+    channel_id INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS ticket_message (
+
+    message_id INTEGER PRIMARY KEY NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS level (
+
+    user_id INTEGER PRIMARY KEY NOT NULL,
+    xp INTEGER NOT NULL
+);
