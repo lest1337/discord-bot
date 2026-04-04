@@ -25,8 +25,8 @@ bot = commands.Bot(
     )
 modules = {
     "util": True,
-    "ticket": True,
-    "moderation": True
+    "ticket": False,
+    "verif": True,
 }
 
 # cogs loadings
