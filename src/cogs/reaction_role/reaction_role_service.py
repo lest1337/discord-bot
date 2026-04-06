@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-import src.cogs.util.reaction_role_repo as repo
+import cogs.reaction_role.reaction_role_repo as repo
 
 class ReactionRoleService:
     def __init__(self, bot) -> None:
@@ -21,6 +21,10 @@ class ReactionRoleService:
         
         self.repo.add_message(message_id, emoji, role_id)
         await message.add_reaction(emoji)
+    
+    async def remove_reaction(self, message: discord.Message):
+        if not self.repo.get_message(message.id) is None:
+            self.repo.remove_message(message.id)
 
     # Gives the role on reaction
     async def give_role(self, payload: discord.RawReactionActionEvent):

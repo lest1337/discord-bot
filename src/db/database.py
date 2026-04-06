@@ -8,7 +8,7 @@ def get_init_file():
         return script.split(';')
 
 def get_connexion():
-    conn = sqlite3.connect("src/db/zane.db")
+    conn = sqlite3.connect("src/db/bot.db")
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA journal_mode=WAL")
     return conn
