@@ -1,5 +1,5 @@
-CREATE TABLE IF NOT EXISTS level (
-
-    user_id INTEGER PRIMARY KEY NOT NULL,
-    xp INTEGER NOT NULL
-);
+create table if not exists reaction_role(
+    message_id integer not null,
+    role_id integer not null,
+    emoji text not null
+)
