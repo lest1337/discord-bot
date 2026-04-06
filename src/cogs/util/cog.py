@@ -11,7 +11,7 @@ class Utils(discord.Cog):
     @commands.command(name='clear')
     @commands.guild_only()
     
-    async def clear(self, ctx: commands.Context, num: int):
+    async def clear(self, ctx: commands.Context, num=100):
         await self.us.clear(ctx, num)
 
 def setup(bot: commands.Bot):

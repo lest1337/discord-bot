@@ -4,7 +4,7 @@ from discord.ext import commands
 import src.cogs.reaction_role.reaction_role_service as rrs
 
 class ReactionRole(discord.Cog):
-    def __init__(self, bot) -> None:
+    def __init__(self, bot: commands.Bot) -> None:
         self.bot = bot
         self.rrs = rrs.ReactionRoleService(self.bot)
     
@@ -24,3 +24,6 @@ class ReactionRole(discord.Cog):
     @commands.Cog.listener()
     async def on_message_delete(self, message:discord.Message):
         await self.rrs.remove_reaction(message)
+
+def setup(bot: commands.Bot):
+    bot.add_cog(ReactionRole(bot))

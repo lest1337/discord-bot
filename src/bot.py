@@ -22,16 +22,10 @@ bot = commands.Bot(
     intents=intents,
     debug_guilds=[DEBUG_GUILD_ID],
     status=discord.Status.dnd
-    )
-modules = {
-    "util": True,
-    "ticket": False,
-    "verif": True,
-}
+)
 
 # cogs loadings
 for module in os.listdir("./src/cogs"):
-    if modules[module]:
-        bot.load_extension(f"src.cogs.{module}.cog")
+    bot.load_extension(f"src.cogs.{module}.cog")
 
 bot.run(TOKEN)

@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-import cogs.reaction_role.reaction_role_repo as repo
+import src.cogs.reaction_role.reaction_role_repo as repo
 
 class ReactionRoleService:
     def __init__(self, bot) -> None:
