@@ -10,3 +10,14 @@ class UtilService:
         if not isinstance(channel, discord.TextChannel):
             return
         await channel.purge(limit=num+1)
+    
+    async def embed(self, ctx: commands.Context) -> None:
+        channel = ctx.channel
+        if not isinstance(channel, discord.TextChannel):
+            return
+        
+        async for message in channel.history(limit=2):
+            if message.id == ctx.message.id:
+                continue
+            await ctx.send(embed=discord.Embed(description=message.content, color=discord.Color(0x000000)))
+        return
