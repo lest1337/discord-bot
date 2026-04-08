@@ -19,5 +19,5 @@ class UtilService:
         async for message in channel.history(limit=2):
             if message.id == ctx.message.id:
                 continue
-            await ctx.send(embed=discord.Embed(description=message.content, color=discord.Color(0x000000)))
+            await ctx.send(embed=discord.Embed(description=message.content, color=discord.Color(0x010101)))
         return
